@@ -2,13 +2,15 @@ require 'digest'
 require 'peer'
 
 class Transfer < ActiveRecord::Base
+  attr_reader :message
+
   belongs_to :sender, :class_name => "Peer"
   belongs_to :recipient, :class_name => "Peer"
   belongs_to :block
   before_create(:sign)
 
   def message
-    Digest::SHA256.hexdigest([self.sender_id, self.recipient_id, self.amount].join)
+    @message = Digest::SHA256.hexdigest([self.sender_id, self.recipient_id, self.amount].join)
   end
 
   private
