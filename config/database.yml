@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: epicoin_development
+
+test:
+  adapter: postgresql
+  database: epicoin_test
