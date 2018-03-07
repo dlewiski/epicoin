@@ -43,10 +43,4 @@ class Transfer < ActiveRecord::Base
     recipient_balance = recipient.balance + self.amount
     recipient.update({:balance => recipient_balance})
   end
-
 end
-
-
-
-# belongs to two peers
-# belongs to block
