@@ -4,7 +4,7 @@ require 'base64'
 class Peer < ActiveRecord::Base
   has_many :transfers
   before_create(:generate_keys)
-  
+
   def generate_keys
     key_pair = OpenSSL::PKey::RSA.new(2048)
     self.private_key, self.public_key = key_pair.export, key_pair.public_key.export
@@ -24,6 +24,7 @@ class Peer < ActiveRecord::Base
 
   #sig is valid if decoding with public key matches original message
   def valid_signature?(message, ciphertext, public_key)
+    binding.pry
     message == plaintext(ciphertext, public_key)
   end
 

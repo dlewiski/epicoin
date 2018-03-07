@@ -2,8 +2,8 @@ require 'transfer'
 require 'digest'
 
 class Block < ActiveRecord::Base
-  validates :transfer_id, {:presence => true}
   has_one :transfer
+  validates :transfer_id, {:presence => true}
 
   # has_many :peers, through: :transfers
 
