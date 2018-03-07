@@ -3,6 +3,7 @@ require 'digest'
 
 class Block < ActiveRecord::Base
   has_one :transfer
+  # has_many :peers, through: :transfers
 
   # def self.genesis(pub_key, priv_key)
   #   genesis_transactions = []
@@ -15,15 +16,15 @@ class Block < ActiveRecord::Base
 
   def self.mine(transfer)
     @num_zeroes = 2
-    if # no other blocks, make the first one
-      @nonce = calc_nonce
-      @message = transfer.message
-      @hash = hash(@message, prev_hash, @nonce)
-      
-      Block.create({:prev_hash => nil, :hash => @hash, :transfer => transfer})
-    else # make a new block
-
+    if Block.all.empty?
+      prev_hash = nil
+    else
+      prev_hash = Block.all.last.fetch('prev_hash')
     end
+    @nonce = calc_nonce
+    @message = transfer.message
+    @hash = hash(@message, prev_hash, @nonce)
+    Block.create({:prev_hash => prev_hash, :hash => @hash, :transfer => transfer})
   end
 
   def hash(message, prev_hash, nonce)
