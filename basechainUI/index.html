@@ -8,7 +8,7 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/multiple.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typeit@VERSION_NUMBER/dist/typeit.min.js"></script>
+    <script type="text/javascript" src="js/typeit.min.js"></script>
     <script>
        $( function() {
          $( ".draggable" ).draggable({
@@ -22,20 +22,10 @@
   <body>
     <div class="container-fluid">
 
-      <p id="logo">GUI</p>
-      <script>
-      new TypeIt('#logo', {
-        strings: ["BLOCK", "BASECHAIN"],
-        speed: 20,
-        breakLines: false,
-        autoStart: true
-      });
-      </script>
+      <p class="logo"> GUI</p>
 
       <div class="dolphin">
         <img id="dolphin-trippy" src="img/dolphintrippy.gif">
-        <img id="dolphin" src="img/dolphin.gif">
-      </div>
 
       <!-- BLOCK TEMPLATE -->
       <div class="draggable block">
@@ -132,6 +122,11 @@
           selector: '.letter.draggable',
           background: 'linear-gradient(315deg, #fff 20%, #f00e0f 65%)',
           affectText: '#fff'
+        });
+        new TypeIt('.logo', {
+          strings: ["GRAPHIC", "GUI"],
+          speed: 1000,
+          breakLines: false
         });
       }());
     </script>
