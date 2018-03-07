@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/js/multiple.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/typeit.min.js"></script>
+    <script src="/js/terminal.js"></script>
     <script>
        $( function() {
          $( ".draggable" ).draggable({
@@ -23,6 +24,44 @@
     <div class="container-fluid">
 
       <p class="logo">EPICOIN</p>
+<!-- TERMINAL -->
+    <div class="terminal">
+      <script>
+        var epiTerminal = new Terminal()
+        epiTerminal.setHeight("200px")
+        epiTerminal.setWidth('600px')
+        epiTerminal.blinkingCursor(true)
+        document.body.appendChild(epiTerminal.html)
+        epiTerminal.print("Hey, hey.")
+        epiTerminal.input("What's your name?", function (input) {
+          epiTerminal.print("Hi, " + input)
+        })
+      </script>
+    </div>
+
+
+      <!-- SCRAP CODE. DO NOT KEEP. -->
+      <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+      </ul>
+
+      <p>Click the button to append an item to the end of the list.</p>
+
+      <button onclick="myFunction()">Try it</button>
+
+      <script>
+      function myFunction() {
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode("Water");
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+      }
+      </script>
+      <!-- SCRAP CODE END -->
+
+      
+<!-- TERMINAL END -->
 
       <div class="dolphin">
         <img id="dolphin-trippy" src="img/dolphintrippy.gif">
@@ -43,7 +82,7 @@
         <div class="letter draggable" id="n"><p>N</p></div>
       </div>
 
-    </div> 
+    </div>
 
     <script>
       (function() {

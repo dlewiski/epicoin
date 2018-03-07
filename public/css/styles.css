@@ -168,4 +168,8 @@ body {
   .dolphin img#dolphin:hover {
     opacity: 0; }
 
+.terminal {
+  position: absolute; 
+}
+
 /*# sourceMappingURL=styles.css.map */
