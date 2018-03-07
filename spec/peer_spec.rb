@@ -10,5 +10,4 @@ describe 'Peer' do
     text = peer.plaintext(ciphertext, public_key)
     expect(text).to eq(message)
   end
-
 end
