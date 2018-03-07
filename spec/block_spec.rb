@@ -25,6 +25,15 @@ describe 'Block' do
       expect(new_block.own_hash).to eq(nil)
     end
   end
+
+  it 'contains an accessible note via transfer' do
+    sender = Peer.create({:name => 'David', :balance => 100})
+    recipient = Peer.create({:name => 'Jared', :balance => 0})
+    transfer = Transfer.create({:note => 'heres those epicoinz', :amount => 100, :sender_id => sender.id, :recipient_id => recipient.id, :sender_private => sender.private_key})
+    new_block = Block.create({:transfer_id => transfer.id})
+    new_block.transfer = transfer
+    expect(new_block.transfer.note).to eq('heres those epicoinz')
+  end
 end
 
 
