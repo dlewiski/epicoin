@@ -1,0 +1,42 @@
+.big-text {
+  position: absolute;
+  left: 20vw;
+  top: 10%;
+  color: #fff;
+  font-family: Arial;
+  font-smooth: never;
+  font-size: 4em;
+  font-weight: bold;
+  font-size: 72px; }
+  .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n {
+    cursor: none;
+    position: relative; }
+  .big-text #b {
+    left: 0vw;
+    top: -11.8vh; }
+  .big-text #a {
+    left: 6vw;
+    top: -17.5vh; }
+  .big-text #s {
+    left: 12.5vw;
+    top: -22vh; }
+  .big-text #e {
+    left: 19vw;
+    top: -26vh; }
+  .big-text #c {
+    left: 0vw;
+    top: -30vh; }
+  .big-text #h {
+    left: 6vw;
+    top: -36vh; }
+  .big-text #a2 {
+    left: 12vw;
+    top: -40vh; }
+  .big-text #i {
+    left: 18vw;
+    top: -45vh; }
+  .big-text #n {
+    left: 22vw;
+    top: -50vh; }
+
+/*# sourceMappingURL=big-text.css.map */

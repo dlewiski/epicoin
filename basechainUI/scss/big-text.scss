@@ -1,0 +1,52 @@
+.big-text {
+  position: absolute;
+  left: 20vw;
+  top: 10%;
+  color: #fff;
+  font-family: Arial;
+  font-smooth: never;
+  font-size: 4em;
+  font-weight: bold;
+  font-size: 72px;
+  
+  #b, #a, #s, #e, #c, #h, #a2, #i, #n {
+    cursor: none;
+    position: relative;
+  }
+  #b {
+    left: 0vw;
+    top: -11.8vh;
+  }
+  #a {
+    left: 6vw;
+    top: -17.5vh;
+  }
+  #s {
+    left: 12.5vw;
+    top: -22vh;
+  }
+  #e {
+    left: 19vw;
+    top: -26vh;
+  }
+  #c {
+    left: 0vw;
+    top: -30vh;
+  }
+  #h {
+    left: 6vw;
+    top: -36vh;
+  }
+  #a2 {
+    left: 12vw;
+    top: -40vh;
+  }
+  #i {
+    left: 18vw;
+    top: -45vh;
+  }
+  #n {
+    left: 22vw;
+    top: -50vh;
+  }
+}
