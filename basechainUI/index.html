@@ -3,8 +3,10 @@
   <head>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="css/multiple.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/multiple.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@VERSION_NUMBER/dist/typeit.min.js"></script>
     <script>
@@ -20,7 +22,7 @@
   <body>
     <div class="container-fluid">
 
-      <p id="logo">BASECHAIN</p>
+      <p id="logo">GUI</p>
       <script>
       new TypeIt('#logo', {
         strings: ["BLOCK", "BASECHAIN"],
@@ -96,7 +98,7 @@
           <h1><div class="icon-my-computer"></div>Genesis Block</h1>
         </div>
         <div class="block-inner">
-        <p>PREVIOUS HASH  0 <br>
+          <p>PREVIOUS HASH  0 <br>
           HASH  801e49673d52ded9b33e1bfdf6763d53aabbd48fdd53f77a3ae7f1f3089424f9</p>
           <p>TRANSACTIONS:</p>
           <p>1. Andrew > Misha 23 EpicCoins
@@ -111,19 +113,27 @@
       <!--  -->
 
       <div class="big-text">
-        <div class="draggable" id="b"><p>B</p></div>
-        <div class="draggable" id="a"><p>A</p></div>
-        <div class="draggable" id="s"><p>S</p></div>
-        <div class="draggable" id="e"><p>E</p></div>
-        <div class="draggable" id="c"><p>C</p></div>
-        <div class="draggable" id="h"><p>H</p></div>
-        <div class="draggable" id="a"><p>A</p></div>
-        <div class="draggable" id="i"><p>I</p></div>
-        <div class="draggable" id="n"><p>N</p></div>
+        <div class="letter draggable" id="b"><p>B</p></div>
+        <div class="letter draggable" id="a"><p>A</p></div>
+        <div class="letter draggable" id="s"><p>S</p></div>
+        <div class="letter draggable" id="e"><p>E</p></div>
+        <div class="letter draggable" id="c"><p>C</p></div>
+        <div class="letter draggable" id="h"><p>H</p></div>
+        <div class="letter draggable" id="a2"><p>A</p></div>
+        <div class="letter draggable" id="i"><p>I</p></div>
+        <div class="letter draggable" id="n"><p>N</p></div>
       </div>
 
-  </div>
-
     </div>
+
+    <script>
+      (function() {
+        var multiple = new Multiple({
+          selector: '.letter.draggable',
+          background: 'linear-gradient(315deg, #fff 20%, #f00e0f 65%)',
+          affectText: '#fff'
+        });
+      }());
+    </script>
   </body>
 </html>

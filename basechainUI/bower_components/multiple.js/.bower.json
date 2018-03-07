@@ -1,0 +1,15 @@
+{
+  "name": "multiple.js",
+  "homepage": "https://github.com/NeXTs/Multiple.js",
+  "version": "0.0.1",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "4bcc53096ce59e2fefe473a584ec639408e48805"
+  },
+  "_source": "https://github.com/NeXTs/Multiple.js.git",
+  "_target": "^0.0.1",
+  "_originalSource": "multiple.js",
+  "_direct": true
+}

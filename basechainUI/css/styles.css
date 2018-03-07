@@ -80,62 +80,36 @@
   font-size: 4em;
   font-weight: bold;
   font-size: 72px; }
-  .big-text #h, .big-text #o, .big-text #w, .big-text #question-mark {
-    cursor: none; }
+  .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n {
+    cursor: none;
+    position: relative; }
   .big-text #b {
-    position: relative;
     left: 0vw;
-    top: -5vh; }
+    top: -11.8vh; }
   .big-text #a {
-    background: linear-gradient(330deg, #ffc6bf 20%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    left: vw;
-    top: -1vh; }
+    left: 6vw;
+    top: -17.5vh; }
   .big-text #s {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    left: 10vw;
-    top: -5vh; }
+    left: 12.5vw;
+    top: -22vh; }
   .big-text #e {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    left: 14vw;
-    top: -1vh; }
+    left: 19vw;
+    top: -26vh; }
   .big-text #c {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    left: 1vw;
-    top: 12vh; }
+    left: 0vw;
+    top: -30vh; }
   .big-text #h {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    left: 5vw;
-    top: 10vh; }
-  .big-text #a {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    left: 6vw;
+    top: -36vh; }
+  .big-text #a2 {
+    left: 12vw;
+    top: -40vh; }
   .big-text #i {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    left: 18vw;
+    top: -45vh; }
   .big-text #n {
-    position: relative;
-    background: linear-gradient(330deg, #ffc6bf 90%, #fff 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    left: 22vw;
+    top: -50vh; }
 
 html, body {
   height: 100%; }
