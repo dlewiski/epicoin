@@ -6,10 +6,19 @@ Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
-  erb:index
+  @blocks = Block.all
+  @peers = Peer.all
+  @transfers = Transfer.all
+  erb:example_behaviors
 end
 
-get('/new_peer') do
+post('/new_peer') do
   name = params[:name]
-  name = params[:name]
+  new_peer = Peer.create({:name => name})
+  redirect to '/'
+end
+
+post('/transaction') do
+  new_peer = Peer.create({:name => name})
+  redirect to '/'
 end
