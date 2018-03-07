@@ -6,11 +6,21 @@ class Transfer < ActiveRecord::Base
   belongs_to :recipient, :class_name => "Peer"
 
   validates :sender_private, {:presence => true}
-  before_create(:message, :sign)
+  validates :amount, numericality: { :greater_than => 0 }
+  before_create(:message, :check_balance)
 
 
   def message
     @message = Digest::SHA256.hexdigest([self.sender_id, self.recipient_id, self.amount].join)
+  end
+
+  def check_balance
+    sender = Peer.find(self.sender_id.to_i)
+    if sender.balance >= amount
+      sign
+    else
+      self.is_valid = false
+    end
   end
 
   def sign
@@ -33,6 +43,7 @@ class Transfer < ActiveRecord::Base
     recipient_balance = recipient.balance + self.amount
     recipient.update({:balance => recipient_balance})
   end
+
 end
 
 

@@ -4,6 +4,7 @@ require 'digest'
 class Block < ActiveRecord::Base
   has_one :transfer
   validates :transfer_id, {:presence => true}
+  validates_associated :transfer, {:is_valid => true}
 
   # has_many :peers, through: :transfers
 
@@ -20,18 +21,30 @@ class Block < ActiveRecord::Base
   #   self.message = Digest::SHA256.hexdigest([self.sender_id, self.recipient_id, self.amount].join)
   # end
 
-  before_create(:mine)
+  before_create(:valid_transaction)
+
+  def valid_transaction
+    transfer = Transfer.find(transfer_id.to_i)
+    self.transfer = transfer
+    if !transfer.is_valid?
+      throw :abort
+    else
+      mine
+    end
+  end
 
   def mine
     transfer = Transfer.find(transfer_id)
-    if Block.all.empty?
-      prev_hash = nil
-    else
-      prev_hash = Block.all.last.fetch('own_hash')
+    if transfer.is_valid?
+      if Block.all.empty?
+        prev_hash = nil
+      else
+        prev_hash = Block.all.last.fetch('own_hash')
+      end
+      self.message = transfer.message
+      self.nonce = calc_nonce(prev_hash)
+      self.own_hash = calc_hash(message, prev_hash, nonce)
     end
-    self.message = transfer.message
-    self.nonce = calc_nonce(prev_hash)
-    self.own_hash = calc_hash(message, prev_hash, nonce)
   end
 
   def calc_hash(message, prev_hash, nonce)
