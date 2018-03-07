@@ -2,15 +2,13 @@ require 'digest'
 require 'peer'
 
 class Transfer < ActiveRecord::Base
-  attr_reader :message
-
   belongs_to :sender, :class_name => "Peer"
   belongs_to :recipient, :class_name => "Peer"
 
-  before_create(:message, :sign, :update_peers)
+  validates :sender_private, {:presence => true}
+  before_create(:message, :sign)
 
 
-  private
   def message
     @message = Digest::SHA256.hexdigest([self.sender_id, self.recipient_id, self.amount].join)
   end
@@ -18,9 +16,13 @@ class Transfer < ActiveRecord::Base
   def sign
     peer_id = self.sender_id
     peer_send = Peer.find(peer_id.to_i)
-    priv_key = peer_send.private_key
-    # binding.pry
-    peer_send.sign(@message, priv_key)
+    signature = peer_send.sign(@message, sender_private)
+    if peer_send.valid_signature?(@message, signature, peer_send.public_key)
+      update_peers
+      self.is_valid = true
+    else
+      self.is_valid = false
+    end
   end
 
   def update_peers

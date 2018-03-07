@@ -3,6 +3,8 @@ require 'digest'
 
 class Block < ActiveRecord::Base
   has_one :transfer
+  validates :transfer_id, {:presence => true}
+
   # has_many :peers, through: :transfers
 
   # def self.genesis(pub_key, priv_key)
@@ -13,36 +15,40 @@ class Block < ActiveRecord::Base
   #   Block.new(nil, genesis_transactions)
   # end
 
+  # before_create(:message)
+  # def message
+  #   self.message = Digest::SHA256.hexdigest([self.sender_id, self.recipient_id, self.amount].join)
+  # end
 
-  def self.mine(transfer)
-    @num_zeroes = 2
+  before_create(:mine)
+
+  def mine
+    transfer = Transfer.find(transfer_id)
     if Block.all.empty?
       prev_hash = nil
     else
-      prev_hash = Block.all.last.fetch('prev_hash')
+      prev_hash = Block.all.last.fetch('own_hash')
     end
-    @nonce = calc_nonce
-    @message = transfer.message
-    @hash = hash(@message, prev_hash, @nonce)
-    Block.create({:prev_hash => prev_hash, :hash => @hash, :transfer => transfer})
+    self.message = transfer.message
+    self.nonce = calc_nonce(prev_hash)
+    self.own_hash = calc_hash(message, prev_hash, nonce)
   end
 
-  def hash(message, prev_hash, nonce)
+  def calc_hash(message, prev_hash, nonce)
     Digest::SHA256.hexdigest([message, prev_hash, nonce].compact.join)
   end
 
-  def calc_nonce
+  def calc_nonce(prev_hash)
+    num_zeroes = 4
     nonce = "MISHA ANDREW JOHN JARED AND DAVID ARE THE BEST"
     count = 0
-    until valid_nonce?(nonce)
+    until calc_hash(message, prev_hash, nonce).start_with?("0" * num_zeroes)
       nonce = nonce.next
+      count += 1
     end
     nonce
   end
 
-  def valid_nonce?(nonce)
-    hash(@message, self.prev_hash, nonce).start_with?("0" * @num_zeroes)
-  end
 end
 
 # has many transactions
