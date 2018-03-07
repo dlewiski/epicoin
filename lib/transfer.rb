@@ -16,17 +16,12 @@ class Transfer < ActiveRecord::Base
     peer_id = self.sender_id
     peer_send = Peer.find(peer_id.to_i)
     priv_key = peer_send.private_key
-    # binding.pry
     signature = peer_send.sign(@message, priv_key)
     if peer_send.valid_signature?(@message, signature, peer_send.public_key)
       update_peers
     else
       self.valid = false
     end
-  end
-
-  def valid_transaction?
-
   end
 
   def update_peers

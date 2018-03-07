@@ -10,7 +10,6 @@ describe 'Block' do
       expect(new_block.nonce).to_not eq(nil)
       expect(new_block.hash).to_not eq(nil)
       hash_check = Digest::SHA256.hexdigest([new_block.message, new_block.prev_hash, new_block.nonce].compact.join)
-      binding.pry
       expect(hash_check.start_with?('0000')).to eq(true)
     end
   end

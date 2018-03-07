@@ -41,7 +41,8 @@ ActiveRecord::Schema.define(version: 20180307041937) do
     t.integer "block_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "valid"
+    t.boolean "is_valid"
+    t.string "sender_private"
   end
 
 end
