@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'digest'
 
 describe 'Peer' do
   it 'has public and private keys, can encrypt and decrypt messages' do
