@@ -1,0 +1,76 @@
+@import 'colors';
+@import 'block';
+@import 'big-text';
+
+html, body {
+  height: 100%;
+}
+
+@keyframes bg-switch {
+    from {background: -webkit-linear-gradient(-225, $red, $gray, $gray, $red);
+    background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%, $red 90%);}
+    to {background: -webkit-linear-gradient(-225, $green, $gray, $gray, $green);
+    background: linear-gradient(315deg, $green 10%, $gray 30%, $gray 60%, $green 90%);}
+}
+
+body {
+  background: -webkit-linear-gradient(-225, $red, $gray, $gray, $red);
+  background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%, $red 90%);
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .container-fluid {
+    width: 70%;
+  }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .container-fluid {
+    width: 90%;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .container-fluid {
+    width: 100%;
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .container-fluid {
+    width: 100%;
+  }
+}
+
+#logo {
+  color: $tomato-pink;
+  font-family: Arial;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-size: 2.3em;
+  margin-top: 30px;
+  margin-bottom: 300px;
+  text-align: center;
+}
+
+.dolphin {
+  position: absolute;
+  left: inherit;
+  top: 60%;
+  opacity: 0.5;
+
+  img{
+    position:absolute;
+    cursor: none;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+
+  img#dolphin:hover {
+    opacity: 0;
+  }
+}
