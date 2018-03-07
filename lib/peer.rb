@@ -28,7 +28,6 @@ class Peer < ActiveRecord::Base
 
   #sig is valid if decoding with public key matches original message
   def valid_signature?(message, ciphertext, public_key)
-
     message == plaintext(ciphertext, public_key)
   end
 
