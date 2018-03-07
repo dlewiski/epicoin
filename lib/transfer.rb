@@ -2,8 +2,6 @@ require 'digest'
 require 'peer'
 
 class Transfer < ActiveRecord::Base
-  # attr_reader :message
-
   belongs_to :sender, :class_name => "Peer"
   belongs_to :recipient, :class_name => "Peer"
 
@@ -20,6 +18,7 @@ class Transfer < ActiveRecord::Base
     priv_key = peer_send.private_key
     # binding.pry
     peer_send.sign(@message, priv_key)
+    binding.pry
   end
 
   def update_peers
