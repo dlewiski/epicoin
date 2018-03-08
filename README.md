@@ -29,8 +29,6 @@ Epicodus Ruby Group Project
   1.
   2.
   3.
-  4.
-
 
 ## Known bugs
 
