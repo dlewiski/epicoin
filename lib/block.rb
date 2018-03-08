@@ -5,12 +5,11 @@ require './lib/peer'
 class Block < ActiveRecord::Base
   has_one :transfer
 
-  validates :transfer_id, {:presence => true}
   validates_associated :transfer, {:is_valid => true}
   before_create(:valid_transaction)
 
   def valid_transaction
-    transfer = Transfer.find(transfer_id.to_i)
+    transfer = Transfer.where({:block_id => nil}).first
     self.transfer = transfer
     if !transfer.is_valid?
       throw :abort
