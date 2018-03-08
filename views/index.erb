@@ -31,13 +31,48 @@
         <h1><div class="icon-my-computer"></div>Console</h1>
       </div>
       <div id="terminal-inner" class="block-inner" style="padding: 0 !important;">
-        <script>var peersNames = [];</script>
-        <% @peers.each do |peer| %>
-          <script>peersNames.push('<%=peer.name%>');</script>
-        <% end %>
         <script>
+        var peersKeys = []
+        var transfers = [];
+        </script>
+
+        <% @peers.each do |peer| %>
+          <script>peersKeys.push('<%=peer.public_key[71, 15]%>');</script>
+        <% end %>
+
+        <% @transfers.each do |transfer| %>
+          <script>
+            transfers.push('Sender: <%transfer.sender.public_key[71, 15]%>');
+            transfers.push('Recipient: <%transfer.recipient.public_key[71, 15]%>');
+            transfers.push('Amount: <%transfer.amount%>');
+          </script>
+        <% end %>
+
+        <script>
+        // Handling post methods
+        function post(path, params, method) {
+          method = method || "post";
+
+          var form = document.createElement("form");
+          form.setAttribute("method", method);
+          form.setAttribute("action", path);
+
+          for(var key in params) {
+            if(params.hasOwnProperty(key)) {
+              var hiddenField = document.createElement("input");
+              hiddenField.setAttribute("type", "hidden");
+              hiddenField.setAttribute("name", key);
+              hiddenField.setAttribute("value", params[key]);
+
+              form.appendChild(hiddenField);
+            }
+          }
+          document.body.appendChild(form);
+          form.submit();
+        }
+
           var term = new Terminal()
-          term.setHeight("400px")
+          term.setHeight('1000px')
           term.setWidth('100%')
           $("#terminal-inner").append(term.html)
 
@@ -59,9 +94,9 @@
                 {
                   var numberOfPeers = <%=@peers.length%>;
                   term.print('Number of peers: ' + numberOfPeers);
-                  for(i=0; i < peersNames.length; i++) {
-                    console.log(peersNames[i]);
-                    term.print(peersNames[i]);
+                  term.print('List of public keys: ');
+                  for(i=0; i < peersKeys.length; i++) {
+                    term.print((i+1) + ') ' +  peersKeys[i]);
                   }
                   break;
                 }
@@ -69,21 +104,75 @@
                 {
                   var numberOfTransfers = <%=@transfers.length%>;
                   term.print('Number of transfers: ' + numberOfTransfers);
+                  for (i = 0; i < transfers.length; i += 3) {
+                    term.print(transfers[i]);
+                    term.print(transfers[i+1]);
+                    term.print(transfers[i+2]);
+                  }
                   break;
                 }
                 case 'key':
                 {
-                  term.print('Keys:');
+                  term.sleep(500, function () {
+                    term.print('Adding a new user to the network:');
+                  })
+                  term.sleep(1400, function () {
+                    term.print('Generating a key pair:');
+                  })
+                  term.sleep(2500, function () {
+                    term.print('Reloading... Your key pair will be updated on the screen shortly.');
+                  })
+                  term.sleep(4000, function () {
+                    post('/new_peer');
+                  })
                   break;
                 }
                 case 'mine':
                 {
-                  term.print('mining.............');
+                  term.input("Enter your public key", function (userInput) {
+                    term.sleep(1000, function () {
+                      term.print('Mining...');
+                    })
+                    term.sleep(2000, function () {
+                      term.print('.');
+                    })
+                    term.sleep(3000, function () {
+                      term.print('.');
+                    })
+                    term.sleep(4000, function () {
+                      term.print('.');
+                    })
+                    term.sleep(5000, function () {
+                      term.print('.');
+                    })
+                    term.sleep(6000, function () {
+                      term.print('.');
+                    })
+                    term.sleep(7000, function () {
+                      term.print('Block was mined');
+                    })
+                    term.sleep(8000, function () {
+                      post('/mine', {miner_key: userInput});
+                    })
+                  })
                   break;
                 }
                 case 'send':
                 {
-                  term.print('Send EPIC:');
+                  term.input("Enter your public key", function (publicKey) {
+                    term.input("Enter your private key", function (privateKey) {
+                      term.input("Enter recipient's public key", function (recipientKey) {
+                        term.input("Enter the amount", function (amount) {
+                          term.sleep(1000, function () {
+                            term.print('Sending...');
+                          })
+                          term.sleep(2000, function () {
+                            post('/transaction', {sender_public: publicKey, sender_private: privateKey, recipient_public: recipientKey, amount: amount});
+                          })
+                        })
+                      })
+                    })
+                  })
                   break;
                 }
                 case 'help':
