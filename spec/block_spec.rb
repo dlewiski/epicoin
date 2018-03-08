@@ -34,6 +34,18 @@ describe 'Block' do
     new_block.transfer = transfer
     expect(new_block.transfer.note).to eq('heres those epicoinz')
   end
+
+  it 'new block points to previous block' do
+    sender = Peer.create({:name => 'David', :balance => 100})
+    recipient = Peer.create({:name => 'Jared', :balance => 0})
+    transfer1 = Transfer.create({:note => 'heres those epicoinz', :amount => 50, :sender_id => sender.id, :recipient_id => recipient.id, :sender_private => sender.private_key})
+    transfer2 = Transfer.create({:note => 'round 2', :amount => 25, :sender_id => sender.id, :recipient_id => recipient.id, :sender_private => sender.private_key})
+    block1 = Block.create({:transfer_id => transfer1.id})
+    block2 = Block.create({:transfer_id => transfer2.id})
+    expect(Block.all).to eq([block1, block2])
+    expect(block1.prev_hash).to eq(nil)
+    expect(block2.prev_hash).to eq(block1.own_hash)
+  end
 end
 
 

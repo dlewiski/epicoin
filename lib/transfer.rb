@@ -1,5 +1,5 @@
 require 'digest'
-require 'peer'
+require './lib/peer'
 
 class Transfer < ActiveRecord::Base
   belongs_to :sender, :class_name => "Peer"
@@ -15,7 +15,7 @@ class Transfer < ActiveRecord::Base
   end
 
   def check_balance
-    sender = Peer.find(self.sender_id.to_i)
+    sender = Peer.find(sender_id.to_i)
     if sender.balance >= amount
       sign
     else
