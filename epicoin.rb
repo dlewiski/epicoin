@@ -11,7 +11,9 @@ get('/') do
   @left_position = 0
   @top_position = 150
   @transfers = Transfer.all
-  erb:index2
+
+  @transfers_tobe_mined = Transfer.where({:block_id => nil, :is_valid => true})
+  erb:index
 
 end
 
@@ -29,14 +31,14 @@ post('/transaction') do
   sender = Peer.where("public_key LIKE ?", "%#{params[:sender_public]}%").first
   recipient = Peer.where("public_key LIKE ?", "%#{params[:recipient_public]}%").first
   amount = params[:amount].to_i
-  binding.pry
   new_transfer = Transfer.create({:sender_id => sender.id, :recipient_id => recipient.id, :sender_private => sender.private_key, :amount => amount})
   redirect to '/'
 end
 
 post('/mine') do
+  transfer = Transfer.where({:block_id => nil, :is_valid => true}).first
   miner = Peer.where("public_key LIKE ?", "%#{params[:miner_key]}%").first
-  mine_transfer = Transfer.find(params[:transfer_id].to_i)
-  new_block = Block.create({:transfer_id => mine_transfer.id, :miner_id => miner.id})
+  # mine_transfer = Transfer.find(params[:transfer_id].to_i)
+  new_block = Block.create({:miner_id => miner.id})
   redirect to '/'
 end

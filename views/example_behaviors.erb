@@ -8,6 +8,11 @@
   <p>id:<%= transfer.id %>   amount:<%= transfer.amount %> valid:<%= transfer.is_valid %></p>
 <% end %>
 
+<h2>Transfers to be mined:</h2>
+<% @transfers_tobe_mined.each do |transfer| %>
+    <p>id:<%= transfer.id %>   amount:<%= transfer.amount %> valid:<%= transfer.is_valid %></p>
+<% end %>
+
 <h2>blockchain:</h2>
 <% @blocks.each do |block| %>
   <p>id:<%= block.id %> previous block's hash:<%= block.prev_hash %>  hash:<%= block.own_hash %> transaction:<%= block.transfer_id %></p>
@@ -33,8 +38,6 @@
 </form>
 
 <form action="/mine" method="post">
-  <label>Transfer ID:</label>
-  <input type="number" name="transfer_id">
   <label>Miner's public key</label>
   <input type="text" name="miner_key">
   <button type="submit" name="mine">Mine a block</button>
