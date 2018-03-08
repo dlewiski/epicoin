@@ -17,21 +17,20 @@ Epicodus Ruby Group Project
 ##### Database
 ![alt text](database_image.png "Epicoin database structure")
 
-##### Custom ruby classes      
-  3.
-    *
-  4.
-    *
-
-
-#### Frontend
 ##### User stories
-  1.
-  2.
-  3.
+  1. User becomes a peer and stores private key in a safe place
+  2. User can make new peers
+  3. User can initiate transactions between peers
+  4. User can have a peer mine to add currency to their balance
+  5. User can make a block by completing a transaction and then mining
+  6. User can click to see a detailed description of block chains and terminology
 
 ## Known bugs
+  Our app is perfect
 
+  jkjk
+
+  We don't even know where to begin... contact us and buy us lots of beverages then will attempt to explain
 
 ## Setup/Installation Requirements
 
@@ -56,9 +55,6 @@ Epicodus Ruby Group Project
   ```
 
   Open your browser and go to localhost:4567
-
-## Technologies Used
-  This application was written in Ruby, built with Sinatra and uses Postgresql for database management.
 
 ## License
   Copyright (c) 2018 Jared Clemmensen, Andrew Peterson, John Rykken, Misha Petrov & David Lewis
