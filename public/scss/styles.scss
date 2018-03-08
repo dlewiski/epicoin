@@ -60,10 +60,10 @@ body {
   left: inherit;
   top: 60%;
   opacity: 0.5;
-
+  cursor: auto;
   img{
     position:absolute;
-    cursor: none;
+
     left:0;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
