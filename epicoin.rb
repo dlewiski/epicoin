@@ -11,7 +11,7 @@ get('/') do
   @left_position = 0
   @top_position = 150
   @transfers = Transfer.all
-  erb:index
+  erb:index2
 
 end
 

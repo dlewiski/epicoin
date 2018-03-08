@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-7">
+
+    <% @blocks.reverse.each do |block| %>
+    <div class="draggable block" style="left:<%=@left_position += 50%>px; top:<%=@top_position -= 150%>px;">
+      <div class="block-title">
+        <h1><div class="icon-my-computer"></div>Block <%= block.id%></h1>
+      </div>
+      <div class="block-inner">
+        <p>PREVIOUS HASH: <%=block.prev_hash%></p>
+        <p>OWN HASH: <%=block.own_hash%></p>
+        <p><%= block.transfer.recipient.public_key[71, 15]%> Sent <%=block.transfer.amount%> EPICOINS to <%=block.transfer.recipient.public_key[71, 15]%></p>
+      </div>
+      <div class="statusbar">
+        <div class="left">Block <%= block.id%></div>
+        <div class="right">&nbsp;</div>
+      </div>
+    </div>
+    <%end%>
+  </div>
+  <div class = "col-md-5">
+
+    <div class="draggable block">
+      <div class="block-title">
+        <h1><div class="icon-my-computer"></div>Interface</h1>
+      </div>
+      <div class="block-inner">
+        <p>
+<div class="row">
+  <div class="col-md-6">
+          <form action="/new_peer" method="post">
+            <button type="submit" name="new_peer">New peer</button>
+            <% unless @peers.empty? %>
+            New private key:  <%= @peers.last.private_key[71, 15] %>
+            <% end %>
+          </form>
+
+          <form action="/transaction" method="post">
+            <label>sender private key</label>
+            <input type="text" name="sender_private"><br>
+            <label>sender public key</label>
+            <input type="text" name="sender_public"><br>
+            <label>recipient public key</label>
+            <input type="text" name="recipient_public"><br>
+            <label>amount</label>
+            <input type="number" name="amount"><br>
+            <button type="submit" name="transaction">Transact</button>
+          </form>
+        </div>
+  <div class="col-md-6">
+    <h2>transfers:</h2>
+    <% @transfers.each do |transfer| %>
+      <p>id:<%= transfer.id %>   amount:<%= transfer.amount %> valid:<%= transfer.is_valid %></p>
+    <% end %>
+          <form action="/mine" method="post"><br>
+            <label>Transfer ID:</label>
+            <input type="number" name="transfer_id"><br>
+            <label>Miner's public key</label>
+            <input type="text" name="miner_key"><br>
+            <button type="submit" name="mine">Mine a block</button>
+          </form>
+</div>
+</div>
+        </p>
+      </div>
+      <div class="statusbar">
+        <div class="left">Interface</div>
+        <div class="right">&nbsp;</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
