@@ -13,6 +13,7 @@ get('/') do
 end
 
 post('/new_peer') do
+  if Peer.all
   new_peer = Peer.create({:balance => 5})
   redirect to '/'
 end

@@ -1,5 +1,6 @@
 require './lib/transfer'
 require 'digest'
+require './lib/peer'
 
 class Block < ActiveRecord::Base
   has_one :transfer
@@ -27,6 +28,10 @@ class Block < ActiveRecord::Base
     self.message = transfer.message
     self.nonce = calc_nonce(prev_hash)
     self.own_hash = calc_hash(message, prev_hash, nonce)
+    binding.pry
+    miner = Peer.find(miner_id.to_i)
+    new_balance = miner.balance + 13
+    miner.update({:balance => new_balance})
   end
 
   def calc_hash(message, prev_hash, nonce)
