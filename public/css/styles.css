@@ -77,7 +77,8 @@
   color: #fff;
   font-size: 4em;
   font-weight: bold;
-  font-size: 72px; }
+  font-size: 72px;
+  cursor: crosshair; }
   .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n, .big-text #t, .big-text #h2, .big-text #e2, .big-text #f, .big-text #u, .big-text #t2, .big-text #u2, .big-text #r, .big-text #e3 {
     position: relative; }
   .big-text #b {
@@ -137,9 +138,9 @@
   .big-text #r {
     left: 49vw;
     top: -83.25vh; }
-  .big-text #e3 {
+  .big-text #e4 {
     left: 56vw;
-    top: -11vh; }
+    top: -99.75vh; }
 
 html, body {
   height: 100%;
@@ -193,6 +194,7 @@ body {
     -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out; }
   .dolphin img#dolphin:hover {
+    cursor: crosshair;
     opacity: 0; }
 
 /*# sourceMappingURL=styles.css.map */
