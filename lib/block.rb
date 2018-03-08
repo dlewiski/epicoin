@@ -24,7 +24,6 @@ class Block < ActiveRecord::Base
     else
       self.prev_hash = Block.all.last.own_hash
     end
-    binding.pry
     self.message = transfer.message
     self.nonce = calc_nonce(prev_hash)
     self.own_hash = calc_hash(message, prev_hash, nonce)
