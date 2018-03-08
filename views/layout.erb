@@ -120,38 +120,40 @@
           'Hello worBZ' might produce '0000c44298fc'
           <br>
           <br>
-          This latter result, '0000c44298fc', is what Nakamoto was looking for. It was the solution to the puzzle. Find a hash that begins with, say, four 0s. And do that by changing the nonce as many times as necessary. What all of this did, basically, was provide a puzzle answer that was close to impossible to reverse enginner. You could create a hash from a nonce. But you could not create a nonce from a hash.
+          This latter result, '0000c44298fc', is what Nakamoto was looking for. It was the solution to the puzzle. Find a hash that begins with, say, four 0s. (Whoever creates the cryptocoin decides how many zeroes.) And do that by changing the nonce as many times as necessary. What all of this did, basically, was provide a puzzle answer that was close to impossible to reverse enginner. You could create a hash from a nonce. But you could not create a nonce from a hash.
           </p>
           <h4>Mining</h4>
           <p>
-          The process of transforming nonces to produce the desired hashes was dubbed 'mining'. These days we know that it takes a lot of computer power and uses a crapload of electricity to 'mine' cryptocurrency. The electricity required to mine a single bitcoin is more than used by 30 Teslas.
+          The process of transforming nonces to produce the desired hashes was dubbed 'mining'. These days we know that it takes a lot of computer power and a crapload of electricity to 'mine' cryptocurrency. The electricity required to mine a single bitcoin is more than is used by 30 Teslas.
           </p>
           <h4>Blockchains</h4>
           <p>
-          Anyhow, here's a visualization of a blockchain.
+          Here's a visualization of a blockchain.
           </p>
-          <img src="">
+          <img src="https://cdn-images-1.medium.com/max/1600/0*cqrlbx179MNEjm2G.">
+          <br>
+          <br>
           <p>
-          These are distributed among the peer-to-peer network.
-          v. In the early years of blockchain technology, each node (e.g. person, device, point of convergence) in the network retained a facsimile of the entire blockchain.
-          vi. These days a node need only keep the blockchain long enough to verify its history and the authenticity of each transaction on the chain, after which the node may discard however much of the blockchain it wants.
+          These are distributed among the peer-to-peer network. <br><br>
+          In the early years of blockchain technology, each node (e.g. person, device, point of convergence) in the network retained a facsimile of the entire blockchain. These days a node need only keep the blockchain long enough to verify its history and the authenticity of each transaction on the chain, after which the node may discard however much of the blockchain it wants.
           </p>
+          <br><br>
           <h4>Vocabulary</h4>
           <p>
-          Basechain: A Base Chain is a pseudo-blockchain which uses a database instead of a true peer-to-peer network.
-          Block. A file or record where data pertaining to a particular cryptocurrency is stored permanently.
-          Blockchain. A chain of digital records. Each record in the chain is chronologically linked to both the previous and following record. These records are referred to as blocks, ergo, blockchain. by a unique identifier known as a hash.
-          Client. A computer (like your laptop) or application (like, your Chrome browser) that accesses a server.
-          Cryptocurrency. Encrypted, digital currency.
-          Cryptography. The study and practice of techniques granting secure communication between people.
-          Fiat. Fiat currency. Coins or paper money with no intrinsic value that are made legal by fiat (order) of the government. E.g. The dollar and the euro are fiat currencies.
-          Genesis block. The first block in a blockchain. It does not have a previous hash.
-          Gossip. Gossip protocol. The process of computer to computer communication among peer-to-peer networks.
-          Hash. In cryptocurrency, a hash is a long sequence of letters and numbers. Here is an example. ‘e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855’. In blockchains, hashes must be preceded by a number of zeros, like so: ‘0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.’ The person who first builds the blockchain decides how many zeros need to precede the hash.
-          Mining. Recently, mining has come to mean the process by which transactions are verified, new nonces are discovered and, finally, new blocks added to the blockchain. Originally (in 2008, at the time of Nakamoto’s white paper), mining meant only the process of computationally difficult puzzle.
-          Node. Intersection point. I.e. the point at which lines or paths connect, converge, or diverge. In computer terminology, a node is a device (e.g. your phone or laptop) or even data point within a larger network.
-          Nonce. Some value that is used only once. A variable.
-          Peer-to-peer network. Network of computer-to-computer relationships wherein data and info are shared.
+          Basechain: A Base Chain is a pseudo-blockchain which uses a database instead of a true peer-to-peer network.<br>
+          Block. A file or record where data pertaining to a particular cryptocurrency is stored permanently.<br>
+          Blockchain. A chain of digital records. Each record in the chain is chronologically linked to both the previous and following record. These records are referred to as blocks, ergo, blockchain. by a unique identifier known as a hash.<br>
+          Client. A computer (like your laptop) or application (like, your Chrome browser) that accesses a server.<br>
+          Cryptocurrency. Encrypted, digital currency.<br>
+          Cryptography. The study and practice of techniques granting secure communication between people.<br>
+          Fiat. Fiat currency. Coins or paper money with no intrinsic value that are made legal by fiat (order) of the government. E.g. The dollar and the euro are fiat currencies.<br>
+          Genesis block. The first block in a blockchain. It does not have a previous hash.<br>
+          Gossip. Gossip protocol. The process of computer to computer communication among peer-to-peer networks.<br>
+          Hash. In cryptocurrency, a hash is a long sequence of letters and numbers. Here is an example.<br> ‘e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855’. In blockchains, hashes must be preceded by a number of zeros, like so: ‘0000e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.’ The person who first builds the blockchain decides how many zeros need to precede the hash.<br>
+          Mining. Recently, mining has come to mean the process by which transactions are verified, new nonces are discovered and, finally, new blocks added to the blockchain. Originally (in 2008, at the time of Nakamoto’s white paper), mining meant only the process of computationally difficult puzzle.<br>
+          Node. Intersection point. I.e. the point at which lines or paths connect, converge, or diverge. In computer terminology, a node is a device (e.g. your phone or laptop) or even data point within a larger network.<br>
+          Nonce. Some value that is used only once. A variable.<br>
+          Peer-to-peer network. Network of computer-to-computer relationships wherein data and info are shared.<br>
           Public-key cryptography. Encryption technique that uses a paired public key (like a username) with a private key (such as a password).
           </p>
         </div>
@@ -164,7 +166,7 @@
 
 
 
-      
+
 
       <%= yield %>
       <div class="dolphin draggable">
