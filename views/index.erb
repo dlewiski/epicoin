@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col-md-7">
 
-
-
-    <% @blocks.each do |peer| %>
-    <div class="draggable block" style="left:<%=@left_position += 50%>px; top:<%=@top_position -= 100%>px;">
+    <% @blocks.reverse.each do |block| %>
+    <div class="draggable block" style="left:<%=@left_position += 50%>px; top:<%=@top_position -= 150%>px;">
       <div class="block-title">
-        <h1><div class="icon-my-computer"></div><%= peer.id%></h1>
+        <h1><div class="icon-my-computer"></div>Block <%= block.id%></h1>
       </div>
       <div class="block-inner">
-      <p><%=peer.id%>
+        <p>PREVIOUS HASH: <%=block.prev_hash%></p>
+        <p>OWN HASH: <%=block.own_hash%></p>
+        <p><%= block.transfer.recipient.public_key[71, 15]%> Sent <%=block.transfer.amount%> EPICOINS to <%=block.transfer.recipient.public_key[71, 15]%></p>
       </div>
       <div class="statusbar">
-        <div class="left">2 transaction(s)</div>
+        <div class="left">Block <%= block.id%></div>
         <div class="right">&nbsp;</div>
       </div>
     </div>

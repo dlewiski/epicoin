@@ -28,7 +28,6 @@ class Transfer < ActiveRecord::Base
     peer_send = Peer.find(peer_id.to_i)
     signature = peer_send.sign(@message, sender_private)
     if peer_send.valid_signature?(@message, signature, peer_send.public_key)
-      update_peers
       self.is_valid = true
     else
       self.is_valid = false

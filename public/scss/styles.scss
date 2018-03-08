@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'block';
 @import 'big-text';
+@import 'overview';
 
 html, body {
   height: 100%;
@@ -17,8 +18,10 @@ html, body {
 }
 
 body {
-  background: -webkit-linear-gradient(-225, $red, $gray, $gray, $red);
-  background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%, $red 90%);
+// background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%, $red 90%), url('https://i.imgur.com/LZhYf5k.gif?1');
+// background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%, $red 90%), url('http://gifimage.net/wp-content/uploads/2017/09/binary-code-gif-3.gif');
+background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%, $red 90%), url('https://78.media.tumblr.com/86c6a3b4ec1e5291bdf533cf58103e7f/tumblr_ouuvctovdx1r9ndy3o1_500.gif');
+    background-blend-mode: lighten;
 }
 
 /* Large desktop */
@@ -60,10 +63,9 @@ body {
   left: inherit;
   top: 60%;
   opacity: 0.5;
-  cursor: auto;
+
   img{
     position:absolute;
-
     left:0;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
@@ -72,6 +74,16 @@ body {
   }
 
   img#dolphin:hover {
+    cursor: crosshair;
     opacity: 0;
   }
+}
+
+#blockchainButton {
+  position: absolute;
+  top: 10vh;
+  color: red;
+  font-size: 24px;
+  background-color:rgba(192,192,192,0.3);
+  border: none;
 }
