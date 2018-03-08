@@ -77,7 +77,8 @@
   color: #fff;
   font-size: 4em;
   font-weight: bold;
-  font-size: 72px; }
+  font-size: 72px;
+  cursor: crosshair; }
   .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n, .big-text #t, .big-text #h2, .big-text #e2, .big-text #f, .big-text #u, .big-text #t2, .big-text #u2, .big-text #r, .big-text #e3 {
     position: relative; }
   .big-text #b {
@@ -137,9 +138,9 @@
   .big-text #r {
     left: 49vw;
     top: -83.25vh; }
-  .big-text #e3 {
+  .big-text #e4 {
     left: 56vw;
-    top: -11vh; }
+    top: -99.75vh; }
 
 html, body {
   height: 100%;
@@ -193,46 +194,7 @@ body {
     -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out; }
   .dolphin img#dolphin:hover {
+    cursor: crosshair;
     opacity: 0; }
 
 /*# sourceMappingURL=styles.css.map */
-
-/* MODAL WINDOW */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* END MODAL WINDOW */
