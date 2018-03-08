@@ -172,7 +172,7 @@ var Terminal = (function () {
 
 		this.html.style.fontFamily = 'Monaco, Courier'
 		this.html.style.margin = '0'
-		this._innerWindow.style.padding = '10px'
+		this._innerWindow.style.padding = '0'
 		this._input.style.margin = '0'
 		this._output.style.margin = '0'
 		this._cursor.style.background = 'white'

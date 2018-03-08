@@ -1,1 +1,105 @@
+<div class="row">
+  <div class="col-md-7">
+    <div class="draggable block">
+      <div class="block-title">
+        <div class="pull-right">
+          <button class="minimize"><span class="fa fa-minus"></span></button>
+          <button class="expand"><span class="fa fa-square-o"></span></button>
+          <button class="times"><span class="fa fa-times"></span></button>
+        </div>
+        <h1><div class="icon-my-computer"></div>Block 3</h1>
+      </div>
+      <div class="block-inner">
+      <p>PREVIOUS HASH  801e49673d52ded9b33e1bfdf6763d53aabbd48fdd53f77a3ae7f1f3089424f9 <br>
+        HASH  801e49673d52ded9b33e1bfdf6763d53aabbd48fdd53f77a3ae7f1f3089424f9</p>
+        <p>TRANSACTIONS:</p>
+        <p>1. Andrew > Misha 23 EpicCoins,</p>
+        <p>2. Katie > Roger 4 EpicCoins</p>
+        <p>1. Andrew > Misha 23 EpicCoins</p>
+        <p>2. Katie > Roger 4 EpicCoins</p>
+        <p>1. Andrew > Misha 23 EpicCoins</p>
+      </div>
+      <div class="statusbar">
+        <div class="left">2 transaction(s)</div>
+        <div class="right">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <div class = "col-md-5">
+    <div id="terminal" class="draggable block">
+      <div class="block-title">
+        <div class="pull-right">
+          <button class="minimize"><span class="fa fa-minus"></span></button>
+          <button class="expand"><span class="fa fa-square-o"></span></button>
+          <button class="times"><span class="fa fa-times"></span></button>
+        </div>
+        <h1><div class="icon-my-computer"></div>Console</h1>
+      </div>
+      <div id="terminal-inner" class="block-inner" style="padding: 0 !important;">
+        <script>
+          var term = new Terminal()
+          term.setHeight("400px")
+          term.setWidth('100%')
+          $("#terminal-inner").append(term.html)
 
+          term.print('*****************************************')
+          term.print('******** Welcome to Basechain!! *********')
+          term.print('*****************************************')
+          term.print('List of supported commands: ')
+          term.print('(peers) - List all peers')
+          term.print('(transfers) - List all transfers')
+          term.print('(key) - Generate a key pair')
+          term.print('(mine) - Mine a block')
+          term.print('(send) - Transfer Epicoin')
+          term.print('(help) - List all commands')
+          term.print('*****************************************')
+          for(i = 0; i < 100; i++) {
+            term.input('', function (choice) {
+              switch (choice) {
+                case 'peers':
+                {
+                  term.print('List of peers:');
+                  break;
+                }
+                case 'transfers':
+                {
+                  term.print('List of transfers:');
+                  break;
+                }
+                case 'key':
+                {
+                  term.print('Keys:');
+                  break;
+                }
+                case 'mine':
+                {
+                  term.print('mining.............');
+                  break;
+                }
+                case 'send':
+                {
+                  term.print('Send EPIC:');
+                  break;
+                }
+                case 'help':
+                {
+                  term.print('*****************************************')
+                  term.print('List of supported commands: ')
+                  term.print('(peers) - List all peers')
+                  term.print('(transfers) - List all transfers')
+                  term.print('(key) - Generate a key pair')
+                  term.print('(mine) - Mine a block')
+                  term.print('(send) - Transfer Epicoin')
+                  term.print('(help) - List all commands')
+                  term.print('*****************************************')
+                  break;
+                }
+              }
+            });
+          }
+
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

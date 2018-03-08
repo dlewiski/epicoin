@@ -9,7 +9,7 @@ get('/') do
   @blocks = Block.all
   @peers = Peer.all
   @transfers = Transfer.all
-  erb:example_behaviors
+  erb:index
 end
 
 post('/new_peer') do
