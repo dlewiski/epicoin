@@ -32,6 +32,26 @@
         <img id="dolphin" src="img/dolphin.gif">
       </div>
 
+      <div class="draggable overview">
+        <div class="block-title">
+          <div class="pull-right">
+            <button class="minimize"><span class="fa fa-minus"></span></button>
+            <button class="expand"><span class="fa fa-square-o"></span></button>
+            <button class="times"><span class="fa fa-times"></span></button>
+          </div>
+          <h1><div class="icon-my-computer"></div>Overview</h1>
+        </div>
+        <div class="block-inner">
+        <div class="frame">
+    <div id="overview"></div>
+  </div>
+        </div>
+        <div class="statusbar">
+          <div class="left">2 transaction(s)</div>
+          <div class="right">&nbsp;</div>
+        </div>
+      </div>
+
       <%= yield %>
       <!--  -->
       <div class="big-text">
