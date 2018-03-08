@@ -5,17 +5,19 @@
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
     <link href="/css/multiple.css" rel="stylesheet">
     <script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+    <script src="/js/jquery-cookie.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
     <script type="text/javascript" src="/js/multiple.js"></script>
+    <script type="text/javascript" src="/js/terminal.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/typeit.min.js"></script>
-    <script src="/js/terminal.js"></script>
     <script>
-       $( function() {
-         $( ".draggable" ).draggable({
-           containment: "window"
-         });
-       } );
+      $(function(){
+        $(".draggable").draggable({
+            containment: "#containment-wrapper",
+            scroll: false,
+        });
+      });
     </script>
     <meta charset="utf-8">
     <title>BASECHAIN</title>
@@ -23,50 +25,14 @@
   <body>
     <div class="container-fluid">
 
-      <p class="logo">EPICOIN</p>
-<!-- TERMINAL -->
-    <div class="terminal">
-      <script>
-        var epiTerminal = new Terminal()
-        epiTerminal.setHeight("200px")
-        epiTerminal.setWidth('600px')
-        epiTerminal.blinkingCursor(true)
-        document.body.appendChild(epiTerminal.html)
-        epiTerminal.print("Hey, hey.")
-        epiTerminal.input("What's your name?", function (input) {
-          epiTerminal.print("Hi, " + input)
-        })
-      </script>
-    </div>
+      <p class="logo">E P I C O I N</p>
 
-
-      <!-- SCRAP CODE. DO NOT KEEP. -->
-      <ul id="myList">
-        <li>Coffee</li>
-        <li>Tea</li>
-      </ul>
-
-      <p>Click the button to append an item to the end of the list.</p>
-
-      <button onclick="myFunction()">Try it</button>
-
-      <script>
-      function myFunction() {
-        var node = document.createElement("LI");
-        var textnode = document.createTextNode("Water");
-        node.appendChild(textnode);
-        document.getElementById("myList").appendChild(node);
-      }
-      </script>
-      <!-- SCRAP CODE END -->
-
-      
-<!-- TERMINAL END -->
-
-      <!-- <div class="dolphin">
+      <div class="dolphin draggable">
         <img id="dolphin-trippy" src="img/dolphintrippy.gif">
         <img id="dolphin" src="img/dolphin.gif">
-      </div> -->
+      </div>
+
+
 
       <%= yield %>
       <!--  -->
@@ -80,12 +46,27 @@
         <div class="letter draggable" id="a2"><p>A</p></div>
         <div class="letter draggable" id="i"><p>I</p></div>
         <div class="letter draggable" id="n"><p>N</p></div>
+        <div class="letter draggable" id="i2"><p>I</p></div>
+        <div class="letter draggable" id="s2"><p>S</p></div>
+        <div class="letter draggable" id="t"><p>T</p></div>
+        <div class="letter draggable" id="h2"><p>H</p></div>
+        <div class="letter draggable" id="e2"><p>E</p></div>
+        <div class="letter draggable" id="f"><p>F</p></div>
+        <div class="letter draggable" id="u"><p>U</p></div>
+        <div class="letter draggable" id="t2"><p>T</p></div>
+        <div class="letter draggable" id="u2"><p>U</p></div>
+        <div class="letter draggable" id="r"><p>R</p></div>
+        <div class="letter draggable" id="e3"><p>E</p></div>
       </div>
 
     </div>
 
     <script>
       (function() {
+        var multiple2 = new Multiple({
+          selector: '.block-inner',
+          background: 'linear-gradient(315deg, #f00e0f 20%, #fff 65%)'
+        });
         var multiple = new Multiple({
           selector: '.letter.draggable',
           background: 'linear-gradient(315deg, #fff 20%, #f00e0f 65%)',

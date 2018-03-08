@@ -6,10 +6,13 @@ Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
+  Block.create({:transfer_id => nil})
   @blocks = Block.all
   @peers = Peer.all
+  @left_position = 0
+  @top_position = 150
   @transfers = Transfer.all
-  erb:example_behaviors
+  erb:index
 end
 
 post('/new_peer') do

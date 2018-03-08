@@ -1,7 +1,7 @@
 .block {
   margin-left: 5%;
   margin-right: 5%;
-  opacity: 0.5;
+  opacity: 0.6;
   margin-top: 25px;
   border: 2px solid;
   border-bottom-color: #535353;
@@ -18,8 +18,8 @@
     border-right-color: #c7c7c7;
     border-left-color: #808080;
     border-top-color: #808080;
-    background-color: #fff;
-    padding: 10px; }
+    padding: 10px;
+    font-family: arial; }
     .block .block-inner ul.icons {
       list-style: none;
       padding: 2px 0;
@@ -80,7 +80,7 @@
   font-size: 4em;
   font-weight: bold;
   font-size: 72px; }
-  .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n {
+  .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n, .big-text #i2, .big-text #s2, .big-text #t, .big-text #h2, .big-text #e2, .big-text #f, .big-text #u, .big-text #t2, .big-text #u2, .big-text #r, .big-text #e3 {
     cursor: none;
     position: relative; }
   .big-text #b {
@@ -110,6 +110,39 @@
   .big-text #n {
     left: 22vw;
     top: -50vh; }
+  .big-text #i2 {
+    left: 30vw;
+    top: -35vh; }
+  .big-text #s2 {
+    left: 35vw;
+    top: -44vh; }
+  .big-text #t {
+    left: 0vw;
+    top: -30vh; }
+  .big-text #h2 {
+    left: 7vw;
+    top: -30vh; }
+  .big-text #e2 {
+    left: 14vw;
+    top: -47.75vh; }
+  .big-text #f {
+    left: 21vw;
+    top: -47.75vh; }
+  .big-text #u {
+    left: 28vw;
+    top: -65.45vh; }
+  .big-text #t2 {
+    left: 35vw;
+    top: -65.45vh; }
+  .big-text #u2 {
+    left: 42vw;
+    top: -83.25vh; }
+  .big-text #r {
+    left: 49vw;
+    top: -83.25vh; }
+  .big-text #e3 {
+    left: 56vw;
+    top: -101vh; }
 
 html, body {
   height: 100%;
@@ -145,8 +178,6 @@ body {
 .logo {
   color: #ffc6bf;
   font-family: Arial;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
   font-size: 2.3em;
   margin-top: 30px;
   margin-bottom: 270px;
@@ -167,9 +198,5 @@ body {
     transition: opacity 1s ease-in-out; }
   .dolphin img#dolphin:hover {
     opacity: 0; }
-
-.terminal {
-  position: absolute; 
-}
 
 /*# sourceMappingURL=styles.css.map */

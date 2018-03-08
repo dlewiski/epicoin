@@ -3,14 +3,14 @@
   left: 20vw;
   top: 10%;
   color: #fff;
-  font-family: Arial;
-  font-smooth: never;
+  // font-family: Arial;
+  // font-smooth: never;
   font-size: 4em;
   font-weight: bold;
   font-size: 72px;
-  
-  #b, #a, #s, #e, #c, #h, #a2, #i, #n {
-    cursor: none;
+
+  #b, #a, #s, #e, #c, #h, #a2, #i, #n, #t, #h2, #e2, #f, #u, #t2, #u2, #r, #e3 {
+    
     position: relative;
   }
   #b {
@@ -48,5 +48,49 @@
   #n {
     left: 22vw;
     top: -50vh;
+  }
+ #i2 {
+    left: 30vw;
+    top: -35vh;
+  }
+  #s2 {
+    left: 35vw;
+    top: -44vh;
+  }
+  #t {
+    left: 0vw;
+    top: -30vh;
+  }
+  #h2 {
+    left: 7vw;
+    top: -30vh;
+  }
+  #e2 {
+    left: 14vw;
+    top: -47.75vh;
+  }
+  #f {
+    left: 21vw;
+    top: -47.75vh;
+  }
+  #u {
+    left: 28vw;
+    top: -65.45vh;
+  }
+  #t2 {
+    left: 35vw;
+    top: -65.45vh;
+  }
+  #u2 {
+    left: 42vw;
+    top: -83.25vh;
+  }
+  #r {
+    left: 49vw;
+    top: -83.25vh;
+  }
+  #e3 {
+    left: 56vw;
+    top: -11vh;
   }
 }
