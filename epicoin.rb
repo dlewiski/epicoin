@@ -11,8 +11,10 @@ get('/') do
   @left_position = 0
   @top_position = 150
   @transfers = Transfer.all
+
   @transfers_tobe_mined = Transfer.where({:block_id => nil, :is_valid => true})
   erb:index
+
 end
 
 post('/new_peer') do
