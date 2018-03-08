@@ -23,6 +23,18 @@
     <title>BASECHAIN</title>
   </head>
   <body>
+    <div class="overview">
+      <div class="overview-inner">
+      <div class="frame">
+    <p>Your Private Key: </p><h3><%= @peers.last.private_key[71, 15] %></h3>
+    <p>Your Public Key: </p><h3><%= @peers.last.public_key[71, 15] %></h3>
+    <h3>Peers:</h3>
+    <% @peers.each do |peer| %>
+      <p>id:<%= peer.id %> public key:<%= peer.public_key[71, 15]%> balance:<%= peer.balance %></p>
+    <% end %>
+    </div>
+    </div>
+    </div>
     <div class="container-fluid">
       <div style="text-align:center">
         <p class="logo">E P I C O I N</p>
@@ -130,12 +142,12 @@
 
 
 
-
-
-
-      
-
       <%= yield %>
+
+
+
+
+
       <div class="dolphin draggable">
         <img id="dolphin-trippy" src="img/dolphintrippy.gif">
         <img id="dolphin" src="img/dolphin.gif">
@@ -163,6 +175,8 @@
         <div class="letter draggable" id="r"><p>R</p></div>
         <div class="letter draggable" id="e4"><p>E</p></div>
       </div>
+
+
 
     </div>
 
