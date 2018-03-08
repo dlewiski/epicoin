@@ -15,14 +15,18 @@
 
 <form action="/new_peer" method="post">
   <button type="submit" name="new_peer">New peer</button>
+  <% unless @peers.empty? %>
+  New peers private key:  <%= @peers.last.private_key[71, 15] %>
+  <% end %>
 </form>
 
 <form action="/transaction" method="post">
-  <!-- <input type="text" name="sender_private" value="sender_private"> -->
-  <label>sender ID</label>
-  <input type="number" name="sender_id">
-  <label>recipient ID</label>
-  <input type="number" name="recipient_id">
+  <label>sender private key</label>
+  <input type="text" name="sender_private">
+  <label>sender public key</label>
+  <input type="text" name="sender_public">
+  <label>recipient public key</label>
+  <input type="text" name="recipient_public">
   <label>amount</label>
   <input type="number" name="amount">
   <button type="submit" name="transaction">Transact</button>
@@ -31,5 +35,7 @@
 <form action="/mine" method="post">
   <label>Transfer ID:</label>
   <input type="number" name="transfer_id">
+  <label>Miner's public key</label>
+  <input type="text" name="miner_key">
   <button type="submit" name="mine">Mine a block</button>
 </form>

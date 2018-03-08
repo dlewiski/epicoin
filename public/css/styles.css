@@ -75,13 +75,10 @@
   left: 20vw;
   top: 10%;
   color: #fff;
-  font-family: Arial;
-  font-smooth: never;
   font-size: 4em;
   font-weight: bold;
   font-size: 72px; }
-  .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n, .big-text #i2, .big-text #s2, .big-text #t, .big-text #h2, .big-text #e2, .big-text #f, .big-text #u, .big-text #t2, .big-text #u2, .big-text #r, .big-text #e3 {
-    cursor: none;
+  .big-text #b, .big-text #a, .big-text #s, .big-text #e, .big-text #c, .big-text #h, .big-text #a2, .big-text #i, .big-text #n, .big-text #t, .big-text #h2, .big-text #e2, .big-text #f, .big-text #u, .big-text #t2, .big-text #u2, .big-text #r, .big-text #e3 {
     position: relative; }
   .big-text #b {
     left: 0vw;
@@ -142,7 +139,7 @@
     top: -83.25vh; }
   .big-text #e3 {
     left: 56vw;
-    top: -101vh; }
+    top: -11vh; }
 
 html, body {
   height: 100%;
@@ -190,7 +187,6 @@ body {
   opacity: 0.5; }
   .dolphin img {
     position: absolute;
-    cursor: none;
     left: 0;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
