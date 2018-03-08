@@ -1,17 +1,35 @@
+<h2>peers:</h2>
+<% @peers.each do |peer| %>
+  <p>id:<%= peer.id %> public key:<%= peer.public_key[71, 15]%> balance:<%= peer.balance %></p>
+<% end %>
+
+<h2>transfers:</h2>
+<% @transfers.each do |transfer| %>
+  <p>id:<%= transfer.id %>   amount:<%= transfer.amount %> valid:<%= transfer.is_valid %></p>
+<% end %>
+
+<h2>blockchain:</h2>
+<% @blocks.each do |block| %>
+  <p>id:<%= block.id %> previous block's hash:<%= block.prev_hash %>  hash:<%= block.own_hash %> transaction:<%= block.transfer_id %></p>
+<% end %>
 
 <form action="/new_peer" method="post">
   <button type="submit" name="new_peer">New peer</button>
 </form>
 
 <form action="/transaction" method="post">
-  <input type="text" name="sender_private" value="sender_private">
-  <input type="text" name="sender_public" value="sender_public">
-  <input type="text" name="recipient_public" value="recipient_public">
-  <input type="number" name="amount" value="amount">
+  <!-- <input type="text" name="sender_private" value="sender_private"> -->
+  <label>sender ID</label>
+  <input type="number" name="sender_id">
+  <label>recipient ID</label>
+  <input type="number" name="recipient_id">
+  <label>amount</label>
+  <input type="number" name="amount">
   <button type="submit" name="transaction">Transact</button>
 </form>
 
 <form action="/mine" method="post">
-  <input type="text" name="transaction_id" value="Transaction ID">
+  <label>Transfer ID:</label>
+  <input type="number" name="transfer_id">
   <button type="submit" name="mine">Mine a block</button>
 </form>
