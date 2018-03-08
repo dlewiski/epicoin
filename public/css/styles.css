@@ -184,6 +184,47 @@
   .overview .statusbar .right {
     width: 66%; }
 
+.overview1 {
+  position: absolute;
+  top: 0vh;
+  opacity: 0.8;
+  margin-top: -1px;
+  border: 2px solid;
+  border-bottom-color: #535353;
+  border-right-color: #535353;
+  border-left-color: #dbdbdb;
+  border-top-color: #dbdbdb;
+  background-color: #bfbfbf;
+  font-size: 13px;
+  padding: 0px; }
+  .overview1 .overview-inner {
+    border: 2px solid;
+    border-bottom-color: #c7c7c7;
+    border-right-color: #c7c7c7;
+    border-left-color: #808080;
+    border-top-color: #808080;
+    padding: 0px;
+    font-family: arial; }
+    .overview1 .overview-inner ul.icons {
+      list-style: none;
+      padding: 2px 0;
+      margin: 0; }
+      .overview1 .overview-inner ul.icons li {
+        display: inline-block;
+        padding: 0 5px; }
+  .overview1 p {
+    opacity: 1 !important; }
+  .overview1 .statusbar .left, .overview1 .statusbar .right {
+    border: 1px solid;
+    border-color: #888 #dadada #dadada #888;
+    display: inline-block;
+    padding: 0px 5px;
+    font-size: 11px; }
+  .overview1 .statusbar .left {
+    width: 33%; }
+  .overview1 .statusbar .right {
+    width: 66%; }
+
 .overview-title {
   background-color: #808080;
   padding: 2px 4px 3px 4px;
@@ -388,5 +429,13 @@ body {
   .dolphin img#dolphin:hover {
     cursor: crosshair;
     opacity: 0; }
+
+#blockchainButton {
+  position: absolute;
+  top: 10vh;
+  color: red;
+  font-size: 24px;
+  background-color: rgba(192, 192, 192, 0.3);
+  border: none; }
 
 /*# sourceMappingURL=styles.css.map */

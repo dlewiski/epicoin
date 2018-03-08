@@ -78,3 +78,12 @@ background: linear-gradient(315deg, $dark-tomato-pink 10%, $gray 30%, $gray 60%,
     opacity: 0;
   }
 }
+
+#blockchainButton {
+  position: absolute;
+  top: 10vh;
+  color: red;
+  font-size: 24px;
+  background-color:rgba(192,192,192,0.3);
+  border: none;
+}
