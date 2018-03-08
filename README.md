@@ -15,10 +15,7 @@ Epicodus Ruby Group Project
 
 #### Backend
 ##### Database
-  1.
-  2.
-    *
-
+![alt text](database_image.png "Epicoin database structure")
 
 ##### Custom ruby classes      
   3.
@@ -57,7 +54,7 @@ Epicodus Ruby Group Project
   Use this command in terminal to run app on the localhost:
 
   ```
-  $ ruby app.rb
+  $ ruby epicoin.rb
   ```
 
   Open your browser and go to localhost:4567
