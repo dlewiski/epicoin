@@ -19,14 +19,15 @@ class Block < ActiveRecord::Base
   end
 
   def mine
-      if Block.all.empty?
-        self.prev_hash = nil
-      else
-        self.prev_hash = Block.all.last.own_hash
-      end
-      self.message = transfer.message
-      self.nonce = calc_nonce(prev_hash)
-      self.own_hash = calc_hash(message, prev_hash, nonce)
+    if Block.all.empty?
+      self.prev_hash = nil
+    else
+      self.prev_hash = Block.all.last.own_hash
+    end
+    binding.pry
+    self.message = transfer.message
+    self.nonce = calc_nonce(prev_hash)
+    self.own_hash = calc_hash(message, prev_hash, nonce)
   end
 
   def calc_hash(message, prev_hash, nonce)
