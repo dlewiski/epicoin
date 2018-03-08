@@ -1,0 +1,324 @@
+@import 'colors';
+
+.overview {
+  position: absolute;
+  top: 0vh;
+  opacity: 0.8;
+  margin-top: -1px;
+  border: 2px solid;
+  border-bottom-color: #535353;
+  border-right-color: #535353;
+  border-left-color: #dbdbdb;
+  border-top-color: #dbdbdb;
+  background-color: #bfbfbf;
+  max-width: 600px;
+  font-size: 13px;
+  padding: 0px;
+  .overview-inner {
+    border: 2px solid;
+    border-bottom-color: #c7c7c7;
+    border-right-color: #c7c7c7;
+    border-left-color: #808080;
+    border-top-color: #808080;
+
+    padding: 0px;
+    font-family: arial;
+    ul.icons {
+      list-style: none;
+      padding: 2px 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        padding: 0 5px;
+      }
+    }
+  }
+  p {
+    opacity: 1 !important;
+  }
+  .statusbar {
+    .left, .right {
+      border: 1px solid;
+      border-color: #888 #dadada #dadada #888;
+      display: inline-block;
+      padding: 0px 5px;
+      font-size: 11px;
+    }
+    .left {
+      width: 33%;
+    }
+    .right {
+      width: 66%;
+    }
+  }
+}
+.overview1 {
+  position: absolute;
+  top: 0vh;
+  opacity: 0.8;
+  margin-top: -1px;
+  border: 2px solid;
+  border-bottom-color: #535353;
+  border-right-color: #535353;
+  border-left-color: #dbdbdb;
+  border-top-color: #dbdbdb;
+  background-color: #bfbfbf;
+  
+  font-size: 13px;
+  padding: 0px;
+  .overview-inner {
+    border: 2px solid;
+    border-bottom-color: #c7c7c7;
+    border-right-color: #c7c7c7;
+    border-left-color: #808080;
+    border-top-color: #808080;
+
+    padding: 0px;
+    font-family: arial;
+    ul.icons {
+      list-style: none;
+      padding: 2px 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        padding: 0 5px;
+      }
+    }
+  }
+  p {
+    opacity: 1 !important;
+  }
+  .statusbar {
+    .left, .right {
+      border: 1px solid;
+      border-color: #888 #dadada #dadada #888;
+      display: inline-block;
+      padding: 0px 5px;
+      font-size: 11px;
+    }
+    .left {
+      width: 33%;
+    }
+    .right {
+      width: 66%;
+    }
+  }
+}
+.overview-title {
+  background-color: #808080;
+  padding: 2px 4px 3px 4px;
+  position: relative;
+  h1 {
+    font-weight: bold;
+    color: #bcbcbc;
+    font-size: 13px;
+    margin: 0;
+  }
+  button {
+    border: 2px solid;
+    border-bottom-color: #444;
+    border-right-color: #444;
+    border-left-color: #a6a6a6;
+    border-top-color: #a6a6a6;
+    background-color: #bfbfbf;
+    position: absolute;
+    font-size: 9px;
+    line-height: 0;
+    padding: 1px;
+    height: 15px;
+    width: 15px;
+    top: 2px;
+  }
+  button.minimize {
+    right: 34px;
+  }
+  button.expand {
+    right: 18px;
+  }
+  button.times {
+    right: 2px;
+  }
+}
+.icon-my-computer {}
+.icon-minimize {}
+.icon-expand {}
+.icon-close {}
+.icon-inbox {}
+.icon-trash {}
+.icon-floppy {}
+.icon-disk {}
+.icon-control-panel {}
+.icon-programs {}
+.icon-documents {}
+.icon-settings {}
+.icon-find {}
+.icon-help {}
+.icon-run {}
+.icon-shut-down {}
+.icon-start {}
+.icon-sound {}
+
+$win95-ui-main-color: #c3c7cb;
+$win95-ui-highlight-color: white;
+$win95-ui-inner-shadow-color: #868a8e;
+$win95-ui-outer-shadow-color: black;
+
+$win95-img-up-arrow: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=';
+$win95-img-down-arrow: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=';
+$win95-img-left-arrow: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC';
+$win95-img-right-arrow: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=';
+$win95-img-scrollbar-bg: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVQIW2M4fPz0////GYAYyAIASnoKpV3w4kgAAAAASUVORK5CYII=';
+$win95-img-scrollbar-bg-active: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEElEQVQIW2No6+pjgAAgCwAWogM9VKrgGQAAAABJRU5ErkJggg==';
+$win95-img-resizer: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==';
+
+@mixin win95-well-border {
+  border-top: 1px solid $win95-ui-outer-shadow-color;
+  border-left: 1px solid $win95-ui-outer-shadow-color;
+  border-right: 1px solid $win95-ui-main-color;
+  border-bottom: 1px solid $win95-ui-main-color;
+  box-shadow: -1px -1px 0 $win95-ui-inner-shadow-color, -1px 0 0 $win95-ui-inner-shadow-color, 0 -1px 0 0 $win95-ui-inner-shadow-color, 1px 0 0 $win95-ui-highlight-color, 1px 1px 0 $win95-ui-highlight-color, 0 1px 0 $win95-ui-highlight-color;
+}
+
+@mixin win95-emboss-border {
+  border-top: 1px solid $win95-ui-main-color;
+  border-left: 1px solid $win95-ui-main-color;
+  border-right: 1px solid $win95-ui-outer-shadow-color;
+  border-bottom: 1px solid $win95-ui-outer-shadow-color;
+  box-shadow: inset 1px 1px 0 0 $win95-ui-highlight-color, inset -1px -1px 0 0 $win95-ui-inner-shadow-color;
+}
+
+@mixin win95-depressed-border {
+  border-top: 1px solid $win95-ui-outer-shadow-color;
+  border-left: 1px solid $win95-ui-outer-shadow-color;
+  border-bottom: 1px solid $win95-ui-inner-shadow-color;
+  border-right: 1px solid $win95-ui-inner-shadow-color;
+  box-shadow: inset 1px 1px 0 0 $win95-ui-inner-shadow-color, 1px 1px 0 0 $win95-ui-outer-shadow-color, 1px 0 0 0 $win95-ui-outer-shadow-color, 0 1px 0 0 $win95-ui-outer-shadow-color;
+}
+
+body {
+  background-color: $win95-ui-main-color;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.frame {
+  @include win95-well-border;
+  color: white;
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+  // background-image: url('https://media.giphy.com/media/2loOzCcAcPB7i/giphy.gif');
+  // background-image: url('http://www.roysac.com/osdm/images/26_FlashView_Amiga.gif');
+  // background-image: url('http://porcelainlab.cre8tives.org/wp-content/uploads/sites/139/2015/11/tumblr_mksforKG0a1r7uzawo1_1280.gif');
+  background-color: #030D79;
+  padding: 8px;
+}
+
+.content {
+  width: 600px;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+textarea {
+  @include win95-well-border;
+
+  width: 400px;
+  height: 150px;
+  padding: 8px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: url($win95-img-scrollbar-bg);
+  image-rendering: pixelated;
+
+  &:active {
+    background-image: url($win95-img-scrollbar-bg-active);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  @include win95-emboss-border;
+
+  width: 16px;
+  height: 16px;
+  background-color: $win95-ui-main-color;
+  z-index: 1;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: $win95-ui-main-color;
+}
+
+::-webkit-resizer {
+  width: 16px;
+  height: 16px;
+  background-color: $win95-ui-main-color;
+  background-image: url($win95-img-resizer);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-button {
+  @include win95-emboss-border;
+
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: $win95-ui-main-color;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &:active {
+    background-position: 2px 2px;
+  }
+
+  &:horizontal:decrement {
+    background-image: url($win95-img-left-arrow);
+  }
+
+  &:horizontal:increment {
+    background-image: url($win95-img-right-arrow);
+  }
+
+  &:vertical:decrement {
+    background-image: url($win95-img-up-arrow);
+  }
+
+  &:vertical:increment {
+    background-image: url($win95-img-down-arrow);
+  }
+
+  &:horizontal:increment:start { display: none; }
+  &:horizontal:decrement:end { display: none; }
+  &:vertical:increment:start { display: none; }
+  &:vertical:decrement:end { display: none; }
+
+  &:active {
+    border-top: 1px solid $win95-ui-inner-shadow-color;
+    border-left: 1px solid $win95-ui-inner-shadow-color;
+    border-bottom: 1px solid $win95-ui-inner-shadow-color;
+    border-right: 1px solid $win95-ui-inner-shadow-color;
+    box-shadow: none;
+  }
+}

@@ -9,7 +9,7 @@
       <div class="block-inner">
         <p>PREVIOUS HASH: <%=block.prev_hash%></p>
         <p>OWN HASH: <%=block.own_hash%></p>
-        <p>ID:<%= block.transfer%> Sent <%=block.transfer.amount%> EPICOINS to ID:<%=block.transfer.recipient_id%></p>
+        <p><%= block.transfer.recipient.public_key[71, 15]%> Sent <%=block.transfer.amount%> EPICOINS to <%=block.transfer.recipient.public_key[71, 15]%></p>
       </div>
       <div class="statusbar">
         <div class="left">Block <%= block.id%></div>
