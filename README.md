@@ -25,8 +25,6 @@ Epicodus Ruby Group Project
   5. User can make a block by completing a transaction and then mining
   6. User can click to see a detailed description of block chains and terminology
 
-## Known bugs
-  
 
 ## Setup/Installation Requirements
 
