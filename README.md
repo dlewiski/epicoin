@@ -26,11 +26,7 @@ Epicodus Ruby Group Project
   6. User can click to see a detailed description of block chains and terminology
 
 ## Known bugs
-  Our app is perfect
-
-  jkjk
-
-  We don't even know where to begin... contact us and buy us lots of beverages then will attempt to explain
+  
 
 ## Setup/Installation Requirements
 
